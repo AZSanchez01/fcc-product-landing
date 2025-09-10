@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalnia:wght@100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+input, button, textarea, select {
+  font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+#root, #__next {
+  isolation: isolate;
+}
+
+/***************************************************************************************************************************/
+
+/* 0. GLOBAL & ROOT */
+:root {
+    --color-dark-primary1: #610d4b;
+    --color-dark-primary2: #01638d;
+    --color-light-primary1: #fff2cd;
+    --color-light-primary2: #abcecc;
+    --color-accent: #fe004c;
+    --font-heading: 'Kalnia';
+    --font-body: 'Atkinson Hyperlegible';
+    font-family: var(--font-body);
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.heading {
+    font-family: 'Kalnia';
+    font-weight: 500;
+}
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+button {
+    background: var(--color-accent);
+    color: white;
+    border: none;
+    border-radius: 1em;
+    font-weight: bold;
+    padding: 0.5em 1em;
+}
+
+/* 1. HEADER & NAVBAR */
+#header {
+    background: var(--color-dark-primary1);
+    box-shadow: 0 0.05em 0.1em gray;
+    color: white;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(1rem, calc(0.1rem + 5vw), 1.5rem);
+}
+#header-img {
+    max-width: 100px;
+    object-fit: cover;
+}
+#nav-bar ul {
+    display: flex;
+    padding: 0;
+    list-style: none;
+}
+#nav-bar li {
+    flex: 1;
+    text-align: center;
+    transition: background-color 0.25s ease-in-out;
+}
+#nav-bar a.nav-link {
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    color: whitesmoke;
+    font-size: clamp(0.8rem, calc(0.4rem + 5vw), 1rem);
+}
+#nav-bar li:hover {
+    background-color: var(--color-accent);
+}
+
+/*2. MAIN */
+.relative {
+    position: relative;
+}
+section {
+    padding: 1em;
+}
+section>article {
+    max-width: clamp(75ch, calc(75ch + 20vw), 70rem);
+}
+section h2 {
+    font-size: clamp(2.3rem, calc(1.5rem + 5vw), 5rem)
+}
+
+/* 2.1 HERO SECTION */
+#hero {
+    display: flex;
+    align-items: center;
+    background: var(--color-dark-primary1);
+    min-height: 90vh;
+    color: white;
+    margin-top: 22vh;
+}
+#hero img {
+    max-height: 60vh;
+    margin: 0 auto;
+}
+#hero article {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    text-align: center;
+}
+#hero .hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    max-width: 50ch;
+}
+#hero button {
+    max-width:fit-content;
+}
+#hero button:hover,
+#form button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+/* 2.2 MENU SECTION */
+#menu {
+    min-height: 95vh;
+    background: var(--color-dark-primary2);
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+#menu .menu-header-text {
+    text-align: center;
+}
+#menu .menu-header-text p {
+    color: #ebebeb;
+}
+
+.menu-items {
+    margin-top: 2em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2em;
+    width: 100%;
+}
+.menu-items .card img {
+    height: 250px;
+    width: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid var(--color-dark-primary1);
+    align-self: center;
+}
+.card {
+    background: rgb(236, 236, 236);
+    color: black;
+    padding: 1.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    border-radius: 1em;
+    box-shadow: 2px 2px 2px black;
+}
+.card h3 {
+    font-size: 2rem;
+}
+/* 2.3 Demo */
+#demo {
+    min-height: 95vh;
+    background: #80013f;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+#demo>article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    text-align: center;
+}
+#video {
+    width: 80%;
+    height: 75%;
+    border-radius: 1em;
+}
+/* 2.4 CONTACT */
+#contact {
+    min-height: 95vh;
+    background: #193C38;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#contact>article {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 3em;
+    padding: 1em;
+    border: 1px solid green;
+}
+#contact img {
+    width: 500px;
+    border-radius: 1em;
+}
+#contact hr {
+    background: black;
+}
+.contact-info {
+    padding: 1.5em 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+form {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+.form-email {
+    display: flex;
+    flex-direction: column;
+}
+form button {
+    max-width: fit-content;
+}
+form #email {
+    background: rgba(0, 0, 0, 0.25);
+    border: none;
+    padding: 0.1em 0.7em;
+    color: white;
+    border-bottom: 2px solid gray;
+    margin-bottom: 0.5em;
+}
+#form button {
+    align-self: center;
+    margin-top: 1em;
+}
+#submit {
+    color: white;
+    background: none;
+    border: none;
+}
+/* 3. FOOTER */
+footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: clamp(0.3rem, 0.3rem + 5vw, 0.7rem);
+    align-items: center;
+    background: #1c1c1c;
+    color: white;
+    padding: 0.7em 1em;
+}
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+/* 4. MEDIA QUERIES */
+
+@media (width >740px) {
+    #header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #nav-bar {
+        align-self: flex-end;
+        padding-right: 1em;
+        padding-bottom: 1em;
+        position: relative;
+        top: 0;
+    }
+    #hero {
+        margin-top: 10vh;
+    }
+    #nav-bar li {
+        align-self: flex-end;
+        padding: 0.5em 1em;
+        gap: 1em;
+    }
+    #hero article {
+        flex-direction: row;
+        justify-content: center;
+        text-align: left;
+        gap: 2.5rem;
+    }
+    #hero img {
+        height: 100%;
+    }
+    #hero button {
+        margin-top: 1em;
+    }
+    #contact>article {
+        flex-direction: row;
+    }
+}
