@@ -164,6 +164,7 @@ section h2 {
 }
 #hero img {
   max-height: 60vh;
+  max-width: 40vw;
   margin: 0 auto;
 }
 #hero article {
@@ -356,6 +357,7 @@ footer a {
   }
   #hero img {
     height: 100%;
+    max-width: none.;
   }
   #hero button {
     margin-top: 1em;
