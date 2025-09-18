@@ -145,6 +145,7 @@ button {
 }
 section {
   padding: 1em;
+  min-height: 90vh;
 }
 section > article {
   max-width: clamp(75ch, calc(75ch + 20vw), 70rem);
