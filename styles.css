@@ -93,9 +93,6 @@ button {
 }
 
 /* 1. HEADER & NAVBAR */
-.header-wrapper {
-  position: relative;
-}
 #header {
   background: var(--color-dark-primary1);
   box-shadow: 0 0.05em 0.1em gray;
