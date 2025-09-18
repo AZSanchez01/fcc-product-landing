@@ -160,7 +160,6 @@ section h2 {
   align-items: center;
   background: var(--color-dark-primary1);
   color: white;
-  padding-top: 4rem;
 }
 #hero img {
   max-height: 60vh;
